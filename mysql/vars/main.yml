@@ -1,6 +1,0 @@
----
-# vars file for mysql
-mysql_db: mondomain
-mysql_user: mondomain
-mysql_password: mondomain
-mysql_root_password: root

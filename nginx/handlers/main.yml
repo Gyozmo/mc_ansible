@@ -1,6 +1,0 @@
----
-# handlers file for nginx
-- name: nginx reload
-  service:
-    name: nginx
-    state: reloaded

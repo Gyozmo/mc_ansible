@@ -1,6 +1,0 @@
----
-# vars file for nodejs
-# NPM
-npm_globals:
-  - npm
-  - pm2

@@ -3,36 +3,4 @@
   hosts: all
   remote_user: root
   tasks:
-    - name: USER | Create new User
-      user: 
-        name: "{{ user }}"
-        shell: "/bin/bash"
-    - name: USER | SSH KEY
-      authorized_key:
-        user: "{{ user }}"
-        state: present
-        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-    # - name: USER | ADD SUDOERS
-    #   lineinfile: /etc/sudoers
-    #   state: present
-    #   regexp: "^{{ user }}"
-    #   line: "{{ user }} ALL=(ALL) NOPASSWD=ALL"
-    #   validate: 'visudo -cf %s'
-    - include_vars:
-        file: vars.yml
-    - name: APT | Update & Upgrade
-      apt:
-        upgrade: dist
-        update_cache: yes
-    - include_role:
-        name: firewall
-    - include_role:
-        name: tools
-    - include_role:
-        name: php
-    - include_role:
-        name: mysql
-    - include_role:
-        name: nodejs
-    - include_role:
-        name: nginx
+    
