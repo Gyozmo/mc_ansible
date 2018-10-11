@@ -1,0 +1,27 @@
+---
+# tasks file for firewall
+- name: FIREWALL | INSTALL UFW
+  apt:
+    name: ufw
+    state: present
+- name: FIREWALL | POLICY
+  ufw:
+    direction: "{{ item.direction }}"
+    policy: "{{ item.policy }}"
+  with_items:
+    - { direction: incoming, policy: deny }
+    - { direction: outgoing, policy: allow}
+- name: FIREWALL | PORT
+  ufw:
+    rule: limit
+    port: ssh
+- name: FIREWALL | HTTP
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  with_items:
+    - http
+    - https
+- name: FIREWALL | UFW ACTIVATION
+  ufw:
+    state: enabled

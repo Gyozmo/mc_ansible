@@ -1,0 +1,8 @@
+---
+# Install all Tool you need.
+- name: INSTALL | ALL TOOLS
+  apt:
+    name:
+      - vim
+      - git
+    state: present

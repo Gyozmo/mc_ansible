@@ -1,0 +1,2 @@
+@IP_VM="192.168.X.X"
+@SSH_KEY_PATH="#{Dir.home}/"

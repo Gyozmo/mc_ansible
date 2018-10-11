@@ -1,0 +1,5 @@
+config.rb
+.vagrant
+hosts
+*.retry
+ubuntu-*
